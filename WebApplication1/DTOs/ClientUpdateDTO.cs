@@ -1,0 +1,24 @@
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace WebApplication1.DTOs
+{
+    public class ClientUpdateDTO
+    {
+        /// <summary>
+        ///     Avem nevoie pentru a putea gasi clientul.
+        ///     Aceasta proprietate este ceruta in acelasi "body" pentru consecventa,
+        ///     chiar daca nu face parte din update.
+        /// </summary>
+        public int Id { get; set; }
+
+        /// <summary>
+        ///     'Required' - obliga ca prin requestul http 
+        ///     sa fie pasat si acest atribut in json
+        /// </summary>
+        [Required, MaxLength(100)]
+        public string FirstName { get; set; }
+
+        [Required, MaxLength(100)]
+        public string LastName { get; set; }
+    }
+}
